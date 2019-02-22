@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card-deatil {
+    width: 500px;
+
+    mat-card-header {
+      justify-content: center;
+    }
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .form-field-width {
+        width: 350px;
+      }
+
+    }
+
+  }
+
+}

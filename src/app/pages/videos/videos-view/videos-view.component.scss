@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .single-card {
+        width: 300px;
+        margin: 15px;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+}

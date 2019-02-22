@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .btn-back {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  .card-deatil {
+    width: 500px;
+
+    mat-card-header {
+      justify-content: center;
+
+      .card-header-icon {
+        text-align: center;
+        line-height: 25px;
+
+        .card-header-icon-color {
+          color: red;
+        }
+      }
+
+    }
+
+    .card-content-title {
+      color: #adadad;
+    }
+
+    .card-content-detail {
+      word-break: break-all;
+    }
+
+  }
+}

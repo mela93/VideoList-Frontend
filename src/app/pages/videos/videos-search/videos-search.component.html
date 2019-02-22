@@ -1,0 +1,12 @@
+<section class="container">
+    <mat-form-field>
+        <input matInput [(ngModel)]="search_text">
+    </mat-form-field>
+    <button mat-button cdkFocusInitial (click)="search()">Search</button>
+</section>
+<section class="container">
+    <mat-card class="single-card clickable" routerLink="/view/{{viedo?.id}}" *ngFor="let viedo of video_data">
+        <p>CODE: {{viedo?.code}}</p>
+        <p>TITLE: {{viedo?.title}}</p>
+    </mat-card>
+</section>

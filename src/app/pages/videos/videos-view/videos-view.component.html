@@ -1,0 +1,6 @@
+<section class="container">
+    <mat-card class="single-card clickable" routerLink="/view/{{viedo?.id}}" *ngFor="let viedo of list_data">
+        <p>CODE: {{viedo?.code}}</p>
+        <p>TITLE: {{viedo?.title}}</p>
+    </mat-card>
+</section>
