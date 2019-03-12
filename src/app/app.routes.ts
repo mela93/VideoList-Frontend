@@ -3,6 +3,6 @@ import { Routes } from '@angular/router';
 export const AppRoutes: Routes = [
     {
         path: "",
-        loadChildren: "./pages/list/list.module#ListModule"
+        loadChildren: "./pages/videos/videos.module#VideosModule"
     }
 ];

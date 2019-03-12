@@ -1,48 +1,104 @@
 <section class="mt-20 container">
     <mat-card class="card-deatil">
         <mat-card-header class="mb-10">
-            <mat-card-title *ngIf="action===0">Create</mat-card-title>
-            <mat-card-title *ngIf="action===1">Update</mat-card-title>
+            <mat-card-title *ngIf="action === 0">Create</mat-card-title>
+            <mat-card-title *ngIf="action === 1">Update</mat-card-title>
         </mat-card-header>
         <!-- <img mat-card-image src="" alt="Photo" *ngIf="video_detail?.photo"> -->
         <mat-card-content class="card-content">
-            <mat-form-field class="mr-10 ml-10 form-field-width" appearance="outline">
+            <mat-form-field
+                class="mr-10 ml-10 form-field-width"
+                appearance="outline"
+            >
                 <mat-label>Code</mat-label>
-                <input matInput placeholder="Code" [(ngModel)]="video_data.code" required>
+                <input
+                    matInput
+                    placeholder="Code"
+                    [(ngModel)]="video_data.code"
+                    required
+                />
             </mat-form-field>
-            <mat-form-field class="mr-10 ml-10 form-field-width" appearance="outline">
+            <mat-form-field
+                class="mr-10 ml-10 form-field-width"
+                appearance="outline"
+            >
                 <mat-label>Title</mat-label>
-                <input matInput placeholder="Title" [(ngModel)]="video_data.title" required>
+                <input
+                    matInput
+                    placeholder="Title"
+                    [(ngModel)]="video_data.title"
+                    required
+                />
             </mat-form-field>
-            <mat-form-field class="mr-10 ml-10 form-field-width" appearance="outline">
+            <mat-form-field
+                class="mr-10 ml-10 form-field-width"
+                appearance="outline"
+            >
                 <mat-label>Link</mat-label>
-                <input matInput placeholder="Link" [(ngModel)]="video_data.link">
+                <input
+                    matInput
+                    placeholder="Link"
+                    [(ngModel)]="video_data.link"
+                />
             </mat-form-field>
-            <mat-form-field class="mr-10 ml-10 form-field-width" appearance="outline">
+            <mat-form-field
+                class="mr-10 ml-10 form-field-width"
+                appearance="outline"
+            >
                 <mat-label>Public date</mat-label>
-                <input matInput [matDatepicker]="picker" [(ngModel)]="video_data.pub_day">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <input
+                    matInput
+                    [matDatepicker]="picker"
+                    [(ngModel)]="video_data.pub_day"
+                />
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker"
+                ></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
             <div class="mr-10 ml-10 mb-20">
-                <mat-slide-toggle class="mr-10" color="primary" [(ngModel)]="video_data.like">
+                <mat-slide-toggle
+                    class="mr-10"
+                    color="primary"
+                    [(ngModel)]="video_data.like"
+                >
                     Like
                 </mat-slide-toggle>
-                <mat-slide-toggle color="primary" [(ngModel)]="video_data.in_library">
+                <mat-slide-toggle
+                    color="primary"
+                    [(ngModel)]="video_data.in_library"
+                >
                     In Libaray
                 </mat-slide-toggle>
             </div>
             <div></div>
         </mat-card-content>
         <mat-card-actions class="text-center">
-            <section *ngIf="action===0">
-                <button mat-raised-button color="primary" (click)="createVideo()">CREATE</button>
-                <button mat-raised-button color="warn" (click)="cancel()">CANCEL</button>
+            <section *ngIf="action === 0">
+                <button
+                    mat-raised-button
+                    color="primary"
+                    (click)="createVideo()"
+                >
+                    CREATE
+                </button>
+                <button mat-raised-button color="warn" (click)="cancel()">
+                    CANCEL
+                </button>
             </section>
-            <section *ngIf="action===1">
-                <button mat-raised-button color="primary" (click)="updateVideo(0)">UPDATE</button>
+            <section *ngIf="action === 1">
+                <button
+                    mat-raised-button
+                    color="primary"
+                    (click)="updateVideo(0)"
+                >
+                    UPDATE
+                </button>
                 <button mat-button (click)="cancel()">CANCEL</button>
-                <button mat-raised-button color="warn" (click)="updateVideo(1)">DELETE</button>
+                <button mat-raised-button color="warn" (click)="updateVideo(1)">
+                    DELETE
+                </button>
             </section>
         </mat-card-actions>
     </mat-card>

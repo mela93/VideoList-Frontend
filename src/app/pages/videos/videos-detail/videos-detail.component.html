@@ -2,9 +2,21 @@
     <button class="btn-back" mat-raised-button routerLink="/view">Back</button>
     <mat-card class="card-deatil">
         <mat-card-header>
-            <div mat-card-avatar class="card-header-icon" (click)="updateVideo(0)">
-                <fa-icon [icon]="['far', 'star']" class="card-header-icon-color" *ngIf="!video_detail?.like"></fa-icon>
-                <fa-icon [icon]="['fas', 'star']" class="card-header-icon-color" *ngIf="video_detail?.like"></fa-icon>
+            <div
+                mat-card-avatar
+                class="card-header-icon"
+                (click)="updateVideo(0)"
+            >
+                <fa-icon
+                    [icon]="['far', 'star']"
+                    class="card-header-icon-color"
+                    *ngIf="!video_detail?.like"
+                ></fa-icon>
+                <fa-icon
+                    [icon]="['fas', 'star']"
+                    class="card-header-icon-color"
+                    *ngIf="video_detail?.like"
+                ></fa-icon>
             </div>
             <mat-card-title>Details</mat-card-title>
         </mat-card-header>
@@ -12,40 +24,78 @@
         <mat-card-content>
             <div class="m-10">
                 <div class="mb-5 ft-12 card-content-title">CODE:</div>
-                <div class="ft-18 card-content-detail">{{video_detail?.code}}</div>
+                <div class="ft-18 card-content-detail">
+                    {{ video_detail?.code }}
+                </div>
             </div>
             <div class="m-10">
                 <div class="mb-5 ft-12 card-content-title">TITLE:</div>
-                <div class="ft-18 card-content-detail">{{video_detail?.title}}</div>
+                <div class="ft-18 card-content-detail">
+                    {{ video_detail?.title }}
+                </div>
             </div>
             <div class="m-10">
                 <div class="mb-5 ft-12 card-content-title">PUBLIC:</div>
-                <div class="ft-18 card-content-detail">{{(video_detail?.pub_day | date:"MM/dd/yyyy" ) || "-"}}</div>
+                <div class="ft-18 card-content-detail">
+                    {{ (video_detail?.pub_day | date: "MM/dd/yyyy") || "-" }}
+                </div>
             </div>
             <div class="m-10">
                 <div class="mb-5 ft-12 card-content-title">LINK:</div>
-                <div class="ft-18 card-content-detail">{{video_detail?.link ? video_detail?.link : "-"}}</div>
+                <div class="ft-18 card-content-detail">
+                    {{ video_detail?.link ? video_detail?.link : "-" }}
+                </div>
             </div>
             <div class="m-10">
-                <div class="mb-5 ft-12 card-content-title">STATUS: </div>
+                <div class="mb-5 ft-12 card-content-title">STATUS:</div>
                 <mat-chip-list class="d-inline-block">
-                    <mat-chip color="primary" selected *ngIf="video_detail?.in_library">
+                    <mat-chip
+                        color="primary"
+                        selected
+                        *ngIf="video_detail?.in_library"
+                    >
                         <span class="ft14">IN LIBRARY</span>
                     </mat-chip>
-                    <mat-chip color="accent" selected *ngIf="!video_detail?.in_library">
+                    <mat-chip
+                        color="accent"
+                        selected
+                        *ngIf="!video_detail?.in_library"
+                    >
                         <span class="ft14">IN WISHLIST</span>
                     </mat-chip>
                 </mat-chip-list>
             </div>
             <div class="m-10">
                 <div class="mb-5 ft-12 card-content-title">UPDATED:</div>
-                <div class="ft-18 card-content-detail">{{video_detail?.updated | date:"MM/dd/yyyy HH:mm:ss"}}</div>
+                <div class="ft-18 card-content-detail">
+                    {{ video_detail?.updated | date: "MM/dd/yyyy HH:mm:ss" }}
+                </div>
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button [routerLink]="['/create']" [queryParams]="{ action: 1, id: video_detail?.id }">UPDATE</button>
-            <button mat-button color="primary" (click)="updateVideo(1)" *ngIf="!video_detail?.in_library">IN LIBRARY</button>
-            <button mat-button color="accent" (click)="updateVideo(1)" *ngIf="video_detail?.in_library">IN WISHLIST</button>
+            <button
+                mat-button
+                [routerLink]="['/create']"
+                [queryParams]="{ action: 1, id: video_detail?.id }"
+            >
+                UPDATE
+            </button>
+            <button
+                mat-button
+                color="primary"
+                (click)="updateVideo(1)"
+                *ngIf="!video_detail?.in_library"
+            >
+                IN LIBRARY
+            </button>
+            <button
+                mat-button
+                color="accent"
+                (click)="updateVideo(1)"
+                *ngIf="video_detail?.in_library"
+            >
+                IN WISHLIST
+            </button>
         </mat-card-actions>
     </mat-card>
 </div>
