@@ -1,12 +1,77 @@
 <section class="container">
     <mat-form-field>
-        <input matInput [(ngModel)]="search_text">
+        <input matInput [(ngModel)]="search_text" />
     </mat-form-field>
     <button mat-button cdkFocusInitial (click)="search()">Search</button>
 </section>
 <section class="container">
-    <mat-card class="single-card clickable" routerLink="/view/{{viedo?.id}}" *ngFor="let viedo of video_data">
-        <p>CODE: {{viedo?.code}}</p>
-        <p>TITLE: {{viedo?.title}}</p>
+    <mat-card
+        class="single-card clickable"
+        routerLink="/view/{{ viedo?.id }}"
+        *ngFor="let viedo of video_data"
+    >
+        <p>CODE: {{ viedo?.code }}</p>
+        <p>TITLE: {{ viedo?.title }}</p>
     </mat-card>
 </section>
+
+<div style="width: 1200px;display: flex;">
+    <div style="flex:2;display: flex;flex-direction:column">
+        <div style="display:flex;margin-bottom: 5px;">
+            <div
+                style="width: 195px;height: 130px;background: #555;flex: 1;margin-right: 5px;"
+            >
+                a
+            </div>
+            <div
+                style="width: 395px;height: 130px;background: #555;flex: 2;margin-right: 5px;"
+            >
+                b
+            </div>
+            <div
+                style="width: 195px;height: 130px;background: #555;flex: 1;margin-right: 5px;"
+            >
+                a
+            </div>
+        </div>
+        <div style="display:flex;margin-right: 5px;">
+            <div
+                style="width: 400px;height: 265px;background: #555;flex: 2;margin-right:5px;"
+            >
+                f
+            </div>
+            <div
+                style="flex: 1;display: flex;flex-direction:column;margin-right:5px;"
+            >
+                <div
+                    style="width: 200px;height: 130px;background: #555;margin-bottom: 5px;"
+                >
+                    e
+                </div>
+                <div style="width: 200px;height: 130px;background: #555;">
+                    e
+                </div>
+            </div>
+            <div style="width: 200px;height: 265px;background: #555;flex: 1">
+                b
+            </div>
+        </div>
+    </div>
+    <div style="flex:1;display: flex;flex-direction:column">
+        <div
+            style="width: 390px;height: 270px;background: #555;flex: 2;margin-bottom: 5px;"
+        >
+            c
+        </div>
+        <div style="flex: 1;display: flex;">
+            <div
+                style="width: 195px;height: 130px;background: #555;margin-right: 5px;"
+            >
+                a
+            </div>
+            <div style="width: 190px;height: 130px;background: #555;">
+                d
+            </div>
+        </div>
+    </div>
+</div>

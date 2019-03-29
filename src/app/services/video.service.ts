@@ -14,7 +14,7 @@ export class VideoService {
 
     public searchVideo(search) {
         let url = "?search=" + search;
-        return this.apiService.get(URL_CONSTANT.BASE_URL + url).pipe(map(
+        return this.apiService.get(URL_CONSTANT.BASE_URL + URL_CONSTANT.VIDEO + url).pipe(map(
             data => {
                 return data;
             })
@@ -22,7 +22,7 @@ export class VideoService {
     }
 
     public getAllVideos() {
-        return this.apiService.get(URL_CONSTANT.BASE_URL).pipe(map(
+        return this.apiService.get(URL_CONSTANT.BASE_URL + URL_CONSTANT.VIDEO).pipe(map(
             data => {
                 return data;
             })
@@ -30,7 +30,7 @@ export class VideoService {
     }
 
     public getVideoById(id) {
-        return this.apiService.get(URL_CONSTANT.BASE_URL + id + '/').pipe(map(
+        return this.apiService.get(URL_CONSTANT.BASE_URL + URL_CONSTANT.VIDEO + id + '/').pipe(map(
             data => {
                 return data;
             })
@@ -38,7 +38,7 @@ export class VideoService {
     }
 
     public updateVideoById(id, data) {
-        return this.apiService.put(URL_CONSTANT.BASE_URL + id + '/', data).pipe(map(
+        return this.apiService.put(URL_CONSTANT.BASE_URL + URL_CONSTANT.VIDEO + id + '/', data).pipe(map(
             data => {
                 return data;
             })
@@ -46,7 +46,7 @@ export class VideoService {
     }
 
     public createVideo(data) {
-        return this.apiService.post(URL_CONSTANT.BASE_URL, data).pipe(map(
+        return this.apiService.post(URL_CONSTANT.BASE_URL + URL_CONSTANT.VIDEO, data).pipe(map(
             data => {
                 return data;
             })
